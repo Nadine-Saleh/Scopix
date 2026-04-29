@@ -42,11 +42,10 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/80 dark:bg-darkBg/80 backdrop-blur-md shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-content mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -73,7 +72,7 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            
+
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}

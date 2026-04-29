@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+// @ts-ignore: CSS module import type declaration not present
 import "./globals.css";
 
 const inter = Inter({
