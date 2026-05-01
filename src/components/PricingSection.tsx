@@ -23,6 +23,14 @@ const cardVariants = {
     }
 };
 
+const featuresMonthly = [
+    "Real-time scope creep detection",
+    "Unlimited change-order drafts",
+    "Scope Health dashboard",
+    "Professional email templates",
+    "Priority support",
+    "Cancel anytime"
+];
 const features = [
     "Real-time scope creep detection",
     "Unlimited change-order drafts",
@@ -131,8 +139,8 @@ export default function PricingSection() {
                         variants={cardVariants}
                         whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         className={`relative rounded-3xl border-2 p-8 lg:p-10 transition-all duration-500 ${!isAnnual
-                                ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 shadow-2xl shadow-blue-500/20'
-                                : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl'
+                            ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 shadow-2xl shadow-blue-500/20'
+                            : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl'
                             }`}
                     >
                         {!isAnnual && (
@@ -170,15 +178,15 @@ export default function PricingSection() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${!isAnnual
-                                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
-                                    : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
+                                ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
+                                : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
                                 }`}
                         >
                             Start Monthly
                         </motion.button>
 
                         <ul className="mt-8 space-y-4">
-                            {features.map((feature, idx) => (
+                            {featuresMonthly.map((featureMonthly, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <div className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${!isAnnual ? 'bg-blue-100 dark:bg-blue-900/40' : 'bg-slate-100 dark:bg-slate-800'
                                         }`}>
@@ -186,7 +194,7 @@ export default function PricingSection() {
                                             }`} />
                                     </div>
                                     <span className="text-sm text-slate-700 dark:text-slate-300">
-                                        {feature}
+                                        {featureMonthly}
                                     </span>
                                 </li>
                             ))}
@@ -198,8 +206,8 @@ export default function PricingSection() {
                         variants={cardVariants}
                         whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         className={`relative rounded-3xl border-2 p-8 lg:p-10 transition-all duration-500 ${isAnnual
-                                ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 shadow-2xl shadow-blue-500/20'
-                                : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl'
+                            ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 shadow-2xl shadow-blue-500/20'
+                            : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl'
                             }`}
                     >
                         {isAnnual && (
@@ -246,8 +254,8 @@ export default function PricingSection() {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${isAnnual
-                                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
-                                        : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
+                                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
+                                    : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
                                     }`}
                             >
                                 Go Annual
