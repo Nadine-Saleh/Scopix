@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import { Check, Star, Zap, Shield } from 'lucide-react';
 import { useState } from 'react';
-
+import Link from 'next/link';
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -174,16 +174,17 @@ export default function PricingSection() {
                             </p>
                         </div>
 
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${!isAnnual
+                        <Link
+                            href="/checkout?plan=monthly"
+                            className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center ${!isAnnual
                                 ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
                                 : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
                                 }`}
                         >
-                            Start Monthly
-                        </motion.button>
+                            <motion.span whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                                Start Monthly
+                            </motion.span>
+                        </Link>
 
                         <ul className="mt-8 space-y-4">
                             {featuresMonthly.map((featureMonthly, idx) => (
@@ -250,16 +251,17 @@ export default function PricingSection() {
                                 </div>
                             </div>
 
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${isAnnual
-                                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
-                                    : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
+                            <Link
+                                href="/checkout?plan=annual"
+                                className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center ${isAnnual
+                                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40'
+                                        : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
                                     }`}
                             >
-                                Go Annual
-                            </motion.button>
+                                <motion.span whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                                    Go Annual
+                                </motion.span>
+                            </Link>
 
                             <ul className="mt-8 space-y-4">
                                 {features.map((feature, idx) => (
